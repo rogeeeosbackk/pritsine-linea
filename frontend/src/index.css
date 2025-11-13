@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@layer base {
+    :root {
+        /* Warm, calm color palette inspired by minimal editors */
+        --background: 35 25% 97%;  /* Soft warm beige background */
+        --foreground: 30 15% 20%;  /* Dark warm gray for text */
+        
+        --card: 35 25% 98%;
+        --card-foreground: 30 15% 20%;
+        
+        --popover: 35 25% 98%;
+        --popover-foreground: 30 15% 20%;
+        
+        --primary: 85 25% 45%;  /* Sage green primary */
+        --primary-foreground: 35 25% 98%;
+        
+        --secondary: 35 20% 90%;  /* Light warm beige */
+        --secondary-foreground: 30 15% 25%;
+        
+        --muted: 35 15% 92%;
+        --muted-foreground: 30 10% 50%;
+        
+        --accent: 85 30% 85%;  /* Light sage accent */
+        --accent-foreground: 30 15% 25%;
+        
+        --destructive: 0 65% 55%;
+        --destructive-foreground: 35 25% 98%;
+        
+        --border: 35 15% 88%;
+        --input: 35 15% 88%;
+        --ring: 85 25% 45%;
+        
+        --radius: 0.5rem;
+        
+        /* Custom design tokens */
+        --editor-bg: 0 0% 100%;  /* Pure white for editor */
+        --toolbar-bg: 35 25% 97%;
+        --toolbar-border: 35 15% 90%;
+        
+        --shadow-soft: 0 2px 8px -2px hsl(30 15% 20% / 0.08);
+        --shadow-medium: 0 4px 16px -4px hsl(30 15% 20% / 0.12);
+        
+        --transition-smooth: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .dark {
+        --background: 30 15% 12%;
+        --foreground: 35 20% 92%;
+        
+        --card: 30 15% 14%;
+        --card-foreground: 35 20% 92%;
+        
+        --popover: 30 15% 14%;
+        --popover-foreground: 35 20% 92%;
+        
+        --primary: 85 30% 55%;
+        --primary-foreground: 30 15% 12%;
+        
+        --secondary: 30 15% 18%;
+        --secondary-foreground: 35 20% 92%;
+        
+        --muted: 30 12% 20%;
+        --muted-foreground: 35 10% 60%;
+        
+        --accent: 85 25% 25%;
+        --accent-foreground: 35 20% 92%;
+        
+        --destructive: 0 60% 50%;
+        --destructive-foreground: 35 20% 92%;
+        
+        --border: 30 12% 22%;
+        --input: 30 12% 22%;
+        --ring: 85 30% 55%;
+        
+        --editor-bg: 30 15% 14%;
+        --toolbar-bg: 30 15% 12%;
+        --toolbar-border: 30 12% 20%;
+        
+        --shadow-soft: 0 2px 8px -2px hsl(0 0% 0% / 0.3);
+        --shadow-medium: 0 4px 16px -4px hsl(0 0% 0% / 0.4);
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer base {
+    [data-debug-wrapper="true"] {
+        display: contents !important;
+    }
+
+    [data-debug-wrapper="true"] > * {
+        margin-left: inherit;
+        margin-right: inherit;
+        margin-top: inherit;
+        margin-bottom: inherit;
+        padding-left: inherit;
+        padding-right: inherit;
+        padding-top: inherit;
+        padding-bottom: inherit;
+        column-gap: inherit;
+        row-gap: inherit;
+        gap: inherit;
+        border-left-width: inherit;
+        border-right-width: inherit;
+        border-top-width: inherit;
+        border-bottom-width: inherit;
+        border-left-style: inherit;
+        border-right-style: inherit;
+        border-top-style: inherit;
+        border-bottom-style: inherit;
+        border-left-color: inherit;
+        border-right-color: inherit;
+        border-top-color: inherit;
+        border-bottom-color: inherit;
+    }
+}
+
+/* Custom utility classes */
+@layer utilities {
+    .font-serif {
+        font-family: 'Merriweather', Georgia, serif;
+    }
+    
+    .transition-smooth {
+        transition: var(--transition-smooth);
+    }
+    
+    .shadow-soft {
+        box-shadow: var(--shadow-soft);
+    }
+    
+    .shadow-medium {
+        box-shadow: var(--shadow-medium);
+    }
+}
